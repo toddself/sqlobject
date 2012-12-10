@@ -373,12 +373,12 @@ class Col(object):
 
     baseClass = SOCol
 
-    def __init__(self, name=None, **kw):
+    def __init__(self, name=None, extra_vars={}, **kw):
         super(Col, self).__init__()
         self.__dict__['_name'] = name
         self.__dict__['_kw'] = kw
         self.__dict__['creationOrder'] = creationOrder.next()
-        self.__dict__['_extra_vars'] = {}
+        self.__dict__['_extra_vars'] = extra_vars
 
     def _set_name(self, value):
         assert self._name is None or self._name == value, (
